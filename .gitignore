@@ -19,6 +19,29 @@ __pycache__/
 .vscode/
 .idea/
 
+
+
+# Node / Next.js
+frontend/node_modules/
+frontend/.next/
+
+# Environment files
+.env
+.env.*
+!.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Python virtual envs
+venv/
+.venv/
+env/
+
+# Cache
+__pycache__/
+*.py[cod]
+
 # OS files
 .DS_Store
 Thumbs.db
