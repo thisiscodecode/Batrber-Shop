@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     BOT_TOKEN: str = ""
     WEBHOOK_URL: str = ""
     WEBHOOK_SECRET: str = ""
+    API_URL: str = "http://localhost:8000"
     ADMIN_USERNAME: str = "admin"
     ADMIN_PASSWORD: str = "admin123"
     CORS_ORIGINS: str = "http://localhost:3000"

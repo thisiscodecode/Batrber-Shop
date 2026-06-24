@@ -1,7 +1,7 @@
 import httpx
 from api.config import settings
 
-API_BASE = f"http://{'localhost:8000' if not settings.WEBHOOK_URL else settings.WEBHOOK_URL.replace('/webhook', '')}/api"
+API_BASE = f"{settings.API_URL.rstrip('/')}/api"
 
 
 async def get_services() -> list[dict]:
@@ -21,7 +21,10 @@ async def create_booking(data: dict) -> dict | None:
             resp.raise_for_status()
             return resp.json()
         except httpx.HTTPStatusError as e:
-            return {"error": e.response.json().get("detail", "خطا در رزرو")}
+            detail = e.response.json().get("detail", "خطا در رزرو")
+            if isinstance(detail, list):
+                detail = detail[0].get("msg", "خطا در رزرو") if detail else "خطا در رزرو"
+            return {"error": detail}
         except Exception:
             return {"error": "خطا در اتصال به سرور"}
 

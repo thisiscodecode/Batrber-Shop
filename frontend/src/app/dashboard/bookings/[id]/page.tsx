@@ -51,7 +51,7 @@ export default function BookingDetailPage() {
 
   if (loading) {
     return (
-      <div className="p-6">
+      <div className="page-shell">
         <div className="animate-pulse space-y-3">
           <div className="h-6 bg-primary-100 rounded w-36" />
           <div className="h-48 bg-primary-100 rounded-2xl" />
@@ -62,14 +62,14 @@ export default function BookingDetailPage() {
 
   if (!booking) {
     return (
-      <div className="p-6">
+      <div className="page-shell">
         <p className="text-sm text-espresso-400">نوبت یافت نشد.</p>
       </div>
     );
   }
 
   return (
-    <div className="p-6">
+    <div className="page-shell">
       <button onClick={() => router.back()} className="text-primary-700 hover:text-primary-800 text-xs font-black mb-4 flex items-center gap-1">
         <svg className="w-3.5 h-3.5 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

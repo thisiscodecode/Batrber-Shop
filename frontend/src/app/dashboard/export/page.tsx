@@ -47,13 +47,13 @@ export default function ExportPage() {
   };
 
   return (
-    <div className="p-6">
-      <div className="mb-6">
-        <h2 className="text-xl font-black text-espresso-900">خروجی اطلاعات</h2>
-        <p className="mt-1 text-sm text-espresso-500">دانلود اطلاعات نوبت‌ها به صورت فایل Excel</p>
+    <div className="page-shell">
+      <div className="mb-8">
+        <h2 className="page-title">خروجی اطلاعات</h2>
+        <p className="page-subtitle">دانلود اطلاعات نوبت‌ها به صورت فایل Excel</p>
       </div>
 
-      <div className="luxury-panel rounded-2xl p-6 max-w-xl">
+      <div className="luxury-panel max-w-xl rounded-3xl p-7">
         <div className="space-y-5">
           <div className="grid grid-cols-2 gap-4">
             <div>

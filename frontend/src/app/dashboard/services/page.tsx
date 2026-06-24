@@ -57,13 +57,13 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="p-6">
-      <div className="dark-panel mb-6 flex flex-col justify-between gap-4 rounded-2xl p-6 text-surface-50 md:flex-row md:items-end">
+    <div className="page-shell">
+      <div className="dark-panel mb-8 flex flex-col justify-between gap-4 rounded-3xl p-7 text-surface-50 md:flex-row md:items-end md:p-8">
         <div>
-          <p className="text-xs font-black text-primary-100">منوی خدمات آرایشگاه</p>
-          <h2 className="mt-2 text-xl font-black">خدماتی که مشتری واقعاً می‌فهمد و رزرو می‌کند</h2>
+          <p className="text-xs font-black text-primary-100">مدیریت خدمات</p>
+          <h2 className="mt-2 text-xl font-black">لیست خدمات آرایشگاه</h2>
           <p className="mt-2 max-w-2xl text-sm leading-7 text-surface-100/72">
-            عنوان، زمان و قیمت هر خدمت را واضح نگه دارید تا مشتری قبل از رزرو بداند چه تجربه‌ای دریافت می‌کند.
+            عنوان، مدت و قیمت هر خدمت را مشخص کنید. این اطلاعات در ربات تلگرام به مشتری نشان داده می‌شود.
           </p>
         </div>
         <button
@@ -84,7 +84,7 @@ export default function ServicesPage() {
           ))
         ) : services.length === 0 ? (
           <div className="luxury-panel col-span-full rounded-2xl py-12 text-center text-sm text-espresso-500">
-            هنوز خدمتی اضافه نشده است. اولین خدمت واقعی آرایشگاه را ثبت کنید.
+            هنوز خدمتی ثبت نشده. اولین خدمت را اضافه کنید.
           </div>
         ) : (
           services.map((svc) => (
@@ -105,7 +105,7 @@ export default function ServicesPage() {
 
               <h3 className="text-base font-black text-espresso-900">{svc.title}</h3>
               <p className="mt-2 text-sm leading-7 text-espresso-500">
-                این خدمت در ربات رزرو نمایش داده می‌شود و مشتری قبل از ثبت نوبت، مدت و قیمت آن را می‌بیند.
+                در ربات تلگرام نمایش داده می‌شود.
               </p>
 
               <div className="my-4 grid grid-cols-2 gap-3">
@@ -138,7 +138,7 @@ export default function ServicesPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-espresso-900/60 p-4 backdrop-blur-sm">
           <div className="luxury-panel w-full max-w-md rounded-2xl p-5">
             <h3 className="text-base font-black text-espresso-900">افزودن خدمت جدید</h3>
-            <p className="mt-1 text-xs leading-7 text-espresso-500">نام، مدت و قیمت را مثل منوی واقعی آرایشگاه وارد کنید.</p>
+            <p className="mt-1 text-xs leading-7 text-espresso-500">نام، مدت (دقیقه) و قیمت (تومان) را وارد کنید.</p>
             <div className="mt-4 space-y-3">
               <div>
                 <label className="mb-1 block text-xs font-black text-espresso-800">عنوان خدمت</label>

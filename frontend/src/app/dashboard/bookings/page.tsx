@@ -42,10 +42,10 @@ export default function BookingsPage() {
   const handleSearch = () => fetchBookings();
 
   return (
-    <div className="p-6">
-      <div className="mb-6">
-        <h2 className="text-xl font-black text-espresso-900">همه نوبت‌ها</h2>
-        <p className="mt-1 text-sm text-espresso-500">مدیریت و بررسی تمام درخواست‌های نوبت</p>
+    <div className="page-shell">
+      <div className="mb-8">
+        <h2 className="page-title">همه نوبت‌ها</h2>
+        <p className="page-subtitle">مدیریت و بررسی تمام درخواست‌های نوبت</p>
       </div>
 
       {/* Filters */}
