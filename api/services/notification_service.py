@@ -36,27 +36,32 @@ async def send_telegram_message(chat_id: int, text: str) -> bool:
 
 async def notify_booking_confirmed(chat_id: int, booking_id: int, service_title: str, date_str: str, time_str: str, note: str | None = None):
     message = (
-        f"<b>نوبت شما تأیید شد</b> ✅\n\n"
-        f"شناسه نوبت: <b>#{booking_id}</b>\n"
-        f"خدمت: {service_title}\n"
-        f"تاریخ: {date_str}\n"
-        f"ساعت: {time_str}\n"
+        "✅ <b>نوبت شما تأیید شد!</b>\n"
+        "━━━━━━━━━━━━━━━━━━━\n\n"
+        f"🔖 شناسه: <b>#{booking_id}</b>\n"
+        f"✨ خدمت: <b>{service_title}</b>\n"
+        f"📅 تاریخ: <b>{date_str}</b>\n"
+        f"🕐 ساعت: <b>{time_str}</b>\n"
     )
     if note:
-        message += f"\nیادداشت: {note}\n"
-    message += "\nمنتظر دیدار شما در آرایشگاه هستیم."
+        message += f"\n📝 یادداشت: {note}\n"
+    message += "\n━━━━━━━━━━━━━━━━━━━\n\nwaiting for you at the salon. 🤝"
     return await send_telegram_message(chat_id, message)
 
 
 async def notify_booking_rejected(chat_id: int, booking_id: int, service_title: str, date_str: str, time_str: str, note: str | None = None):
     message = (
-        f"<b>نوبت شما تأیید نشد</b> ❌\n\n"
-        f"شناسه نوبت: <b>#{booking_id}</b>\n"
-        f"خدمت: {service_title}\n"
-        f"تاریخ: {date_str}\n"
-        f"ساعت: {time_str}\n"
+        "❌ <b>نوبت شما تأیید نشد</b>\n"
+        "━━━━━━━━━━━━━━━━━━━\n\n"
+        f"🔖 شناسه: <b>#{booking_id}</b>\n"
+        f"✨ خدمت: <b>{service_title}</b>\n"
+        f"📅 تاریخ: <b>{date_str}</b>\n"
+        f"🕐 ساعت: <b>{time_str}</b>\n"
     )
     if note:
-        message += f"\nدلیل: {note}\n"
-    message += "\nلطفاً یک زمان دیگر را از ربات رزرو انتخاب کنید."
+        message += f"\n📝 دلیل: {note}\n"
+    message += (
+        "\n━━━━━━━━━━━━━━━━━━━\n\n"
+        "لطفاً زمان دیگری را از ربات رزرو انتخاب کنید."
+    )
     return await send_telegram_message(chat_id, message)
